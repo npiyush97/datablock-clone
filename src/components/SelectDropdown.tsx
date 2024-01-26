@@ -6,7 +6,7 @@ interface SelectDropdownProps extends React.SelectHTMLAttributes<HTMLSelectEleme
   label: string;
   options: SelectOption[];
   value?: string;
-  key: string;
+  key?: string;
 }
 
 const SelectDropdown: FC<SelectDropdownProps> = ({

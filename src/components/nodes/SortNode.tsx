@@ -58,7 +58,15 @@ const SortNode = () => {
       }
     }
   }, [nodeId, edges, nodeOutputs]);
-
+  useEffect(() => {
+    const first = columnNames[0];
+    if (first) {
+      setSortOption({
+        column: first.text || '',
+        order: orders[0].text || ''
+      });
+    }
+  }, [columnNames]);
   // handle change
   const handleChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
@@ -69,7 +77,7 @@ const SortNode = () => {
       [name]: value
     }));
   };
-
+  console.log(sortOption);
   // handle all oprations for filter
   const handleRun = () => {
     if (nodeId) {
@@ -103,12 +111,10 @@ const SortNode = () => {
       title="Sort"
       showRun={columnNames.length > 0}
       handleRun={handleRun}
-      handles={handles}
-    >
+      handles={handles}>
       <SelectDropdown
         label="Column name"
         options={columnNames}
-        key={sortOption.column}
         name="column"
         value={sortOption.column}
         onChange={handleChange}
@@ -116,7 +122,6 @@ const SortNode = () => {
       />
       <SelectDropdown
         label="Order"
-        key={sortOption.order}
         options={orders}
         name="order"
         value={sortOption.order}
