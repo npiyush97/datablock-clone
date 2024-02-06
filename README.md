@@ -80,8 +80,8 @@ Filters datasets based on given column and condition.
 
 #### Installation & Usage
 
-- Clone this repository: git clone https://github.com/npiyush97/dhiwise.git
-- Navigate to the project directory: `cd dhiwise`
+- Clone this repository: git clone https://github.com/npiyush97/datablock-clone.git
+- Navigate to the project directory: `cd datablock-clone`
 - Install dependencies: `npm install` if error install with --legacy-peer-deps because of eslint ts. 
 - Run the application: `npm start` OR `npm run start`
 - Access the application in your browser at http://localhost:3000
